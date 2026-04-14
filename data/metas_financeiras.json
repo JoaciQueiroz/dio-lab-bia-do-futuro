@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nome": "Compra de masseira de pizza",
+    "valor_meta": 15000,
+    "valor_atual": 4750,
+    "prazo": "2027-12-31"
+  },
+  {
+    "id": 2,
+    "nome": "Reserva de emergência",
+    "valor_meta": 10000,
+    "valor_atual": 3000,
+    "prazo": "2026-08-30"
+  }
+]
