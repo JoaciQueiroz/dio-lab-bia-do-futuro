@@ -1,55 +1,34 @@
-# Base de Conhecimento
-
-## Dados Utilizados
-
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
-| Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
-
+🗂 Base de Conhecimento
+•	transacoes.csv → hábitos de consumo e saldo.
+•	historico_atendimento.csv → consistência nas respostas.
+•	perfil_investidor.json → perfil de risco e objetivos.
+•	produtos_financeiros.json → catálogo de produtos financeiros.
+🤖 Agente FinFree
+•	Carrega os dados da base.
+•	Monta o contexto do cliente.
+•	Aplica regras (50-30-20, perfil de risco, simulações).
+•	Gera resposta personalizada.
+👤 Usuário
+•	Faz uma pergunta ou solicitação.
+•	Recebe uma resposta clara, confiável e adaptada ao seu perfil.
 ---
-
-## Adaptações nos Dados
-
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
-
-[Sua descrição aqui]
-
----
-
-## Estratégia de Integração
-
-### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
-
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
-
-### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
-
-[Sua descrição aqui]
-
----
-
-## Exemplo de Contexto Montado
-
-> Mostre um exemplo de como os dados são formatados para o agente.
-
-```
+📄 Exemplo de Contexto Montado
 Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Nome: Maria
+- Perfil: Conservador
+- Renda mensal: R$ 3.000
+- Objetivo: Intercâmbio em 2 anos
 
 Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
-```
+- 01/03: Salário +R$ 3.000
+- 05/03: Aluguel -R$ 1.200
+- 07/03: Supermercado -R$ 400
+- 10/03: Investimento Tesouro Selic -R$ 500
+- 15/03: Freelance +R$ 800
+
+Produtos disponíveis:
+- Tesouro Selic: risco baixo, liquidez diária
+- CDB: risco baixo, liquidez prazo definido
+- LCI: risco baixo, isento de IR, prazo definido
+- ETF: risco médio, liquidez diária
+________________________________________
