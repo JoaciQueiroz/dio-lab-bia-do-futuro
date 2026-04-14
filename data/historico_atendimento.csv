@@ -1,6 +1,6 @@
-data,canal,tema,resumo,resolvido
-2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
-2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
-2025-10-01,chat,Tesouro Selic,Cliente pediu explicação sobre o funcionamento do Tesouro Direto,sim
-2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
-2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
+data,usuario,mensagem,resposta
+2026-02-15,Carlos Souza,"Quero saber como organizar meu orçamento mensal.","Sugiro aplicar a regra 50-30-20: 50% para necessidades, 30% para desejos e 20% para investimentos."
+2026-02-20,Carlos Souza,"Tenho interesse em começar a investir, mas não sei por onde.","Você pode começar pelo Tesouro Selic, que é seguro e tem liquidez diária."
+2026-02-25,Carlos Souza,"Gostaria de opções de investimento sustentáveis.","Recomendo o Fundo ESG Sustentável, que combina retorno financeiro com impacto positivo."
+2026-03-01,Carlos Souza,"Preciso de ajuda para reduzir gastos com lazer.","Você pode definir um teto mensal para lazer e priorizar atividades de baixo custo."
+2026-03-10,Carlos Souza,"Quais produtos se encaixam no meu perfil moderado?","Fundos multimercado moderados e CDBs de liquidez diária são boas opções para equilibrar risco e retorno."
