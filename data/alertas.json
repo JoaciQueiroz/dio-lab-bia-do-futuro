@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "tipo": "gasto excessivo",
+    "mensagem": "Você gastou 40% da renda em lazer este mês, acima do limite recomendado de 30%.",
+    "ativo": true
+  },
+  {
+    "id": 2,
+    "tipo": "meta atrasada",
+    "mensagem": "Sua meta de viagem internacional está 3 meses atrasada em relação ao plano inicial.",
+    "ativo": true
+  }
+]
