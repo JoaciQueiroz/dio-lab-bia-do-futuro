@@ -1,42 +1,60 @@
-[
-  {
-    "nome": "Tesouro Selic",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "100% da Selic",
-    "aporte_minimo": 30.00,
-    "indicado_para": "Reserva de emergência e iniciantes"
+{
+  "produtos": [
+    {
+  "nome": "Tesouro Selic",
+  "tipo": "Renda Fixa (Título Público)",
+  "risco": "Mínimo (Soberano)",
+  "liquidez": "Diária (D+0)",
+  "rentabilidade_media": "1,15% ao mês, aproximadamente (Bruto)",
+  "indicacao": "Ideal para reserva de emergência e investidores que buscam a maior segurança do mercado com retorno acima da inflação."
   },
   {
-    "nome": "CDB Liquidez Diária",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "102% do CDI",
-    "aporte_minimo": 100.00,
-    "indicado_para": "Quem busca segurança com rendimento diário"
+  "nome": "Poupança",
+  "tipo": "Renda Fixa (Depósito Bancário)",
+  "risco": "Baixo (Garantia do FGC)",
+  "liquidez": "Diária (mas com perda de rendimento antes do aniversário)",
+  "rentabilidade_media": "0,67% ao mês, aproximadamente (0,5% + TR)",
+  "indicacao": "Indicada apenas para valores baixos de uso imediato, devido à perda de poder de compra frente a outros investimentos de baixo risco."
+  },  
+  {
+    "nome": "CDB Liquidez Diária (100% CDI)",
+    "tipo": "Renda Fixa",
+    "risco": "Baixo (Garantia FGC)",
+    "liquidez": "Diária",
+    "rentabilidade_media": "1,16% ao mês (Bruto)",
+    "indicacao": "Excelente para reserva de emergência, oferecendo rentabilidade ligeiramente superior à Selic em alguns bancos."
   },
   {
-    "nome": "LCI/LCA",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "95% do CDI",
-    "aporte_minimo": 1000.00,
-    "indicado_para": "Quem pode esperar 90 dias (isento de IR)"
+    "nome": "Fundo Imobiliário (FII) - MXRF11",
+    "tipo": "Renda Variável (Fundo de Papel)",
+    "risco": "Médio (Oscilação de cota)",
+    "liquidez": "D+2 (Venda em Bolsa)",
+    "rentabilidade_media": "0,95% a 1,05% ao mês (Isento de IR)",
+    "indicacao": "O mais procurado do país. Ideal para quem busca renda mensal (dividendos) isenta de imposto com cota acessível (aprox. R$ 10)."
   },
   {
-    "nome": "Fundo Multimercado",
-    "categoria": "fundo",
-    "risco": "medio",
-    "rentabilidade": "CDI + 2%",
-    "aporte_minimo": 500.00,
-    "indicado_para": "Perfil moderado que busca diversificação"
+    "nome": "Fundo Multimercado Moderado",
+    "tipo": "Fundo de Investimento",
+    "risco": "Moderado",
+    "liquidez": "D+3 a D+30",
+    "rentabilidade_media": "1,25% ao mês (Meta de superar o CDI)",
+    "indicacao": "Para quem quer diversificação em juros, moedas e bolsa sob gestão profissional."
   },
   {
-    "nome": "Fundo de Ações",
-    "categoria": "fundo",
-    "risco": "alto",
-    "rentabilidade": "Variável",
-    "aporte_minimo": 100.00,
-    "indicado_para": "Perfil arrojado com foco no longo prazo"
+    "nome": "Ações Blue Chips (ex: PETR4, VALE3, bancos)",
+    "tipo": "Renda Variável",
+    "risco": "Alto",
+    "liquidez": "D+2",
+    "rentabilidade_media": "Volátil (Histórico de 10% a 15% a.a. + Dividendos)",
+    "indicacao": "Investidores com foco em longo prazo e construção de patrimônio resiliente."
+  },
+  {
+    "nome": "Fundo ESG Sustentável",
+    "tipo": "Fundo de Investimento",
+    "risco": "Moderado",
+    "liquidez": "D+5",
+    "rentabilidade_media": "1,10% ao mês (Atrelado ao Crédito Privado)",
+    "indicacao": "Focado em empresas com boas práticas ambientais e sociais, geralmente via debêntures sustentáveis."
   }
-]
+  ]
+}
