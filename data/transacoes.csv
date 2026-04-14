@@ -1,11 +1,17 @@
 data,descricao,categoria,valor,tipo
-2025-10-01,Salário,receita,5000.00,entrada
-2025-10-02,Aluguel,moradia,1200.00,saida
-2025-10-03,Supermercado,alimentacao,450.00,saida
-2025-10-05,Netflix,lazer,55.90,saida
-2025-10-07,Farmácia,saude,89.00,saida
-2025-10-10,Restaurante,alimentacao,120.00,saida
-2025-10-12,Uber,transporte,45.00,saida
-2025-10-15,Conta de Luz,moradia,180.00,saida
-2025-10-20,Academia,saude,99.00,saida
-2025-10-25,Combustível,transporte,250.00,saida
+2026-03-01,Salário,Receita,4800,entrada
+2026-03-02,Aluguel,Habitação,550,saida
+2026-03-03,Supermercado,Alimentação,600,saida
+2026-03-04,Cinema,Lazer,120,saida
+2026-03-05,Freelance,Receita,1820,entrada
+2026-03-06,Plano de Saúde,Saúde,400,saida
+2026-03-07,Gasolina,Transporte,250,saida
+2026-03-08,Investimento Tesouro Selic,Investimento,800,saida
+2026-03-09,Restaurante,Lazer,180,saida
+2026-03-10,Academia,Saúde,150,saida
+2026-03-11,Dividendos Ações,Receita,300,entrada
+2026-03-12,Viagem,Lazer,350,saida
+2026-03-13,Energia eletrica,Habitação,230,saida
+2026-03-13,gás de cozinha,Habitação,130,saida
+2026-03-14,Curso Online,Educacao,350,saida
+2026-03-15,Aplicação Fundo ESG,Investimento,1000,saida
