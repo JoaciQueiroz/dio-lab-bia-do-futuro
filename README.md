@@ -108,3 +108,7 @@ Coerência: Recomendações baseadas estritamente no perfil de risco do utilizad
 Distribuído sob a licença MIT. 
 
 Desenvolvido como projeto prático para o desafio de Agentes de IA da DIO. 🚀
+
+## 📖 Saiba Mais
+* Para entender a visão de negócio deste projeto, veja o [pitch.md](./pitch.md).
+* Para detalhes técnicos sobre a implementação e fluxo de dados, acesse a [Documentation.md](./Documentation.md).
