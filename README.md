@@ -1,149 +1,106 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💸 FinFree - Agente Financeiro Digital
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+O **FinFree** é um agente financeiro digital desenvolvido em **Python + Streamlit**, que ajuda usuários a organizar orçamento, simular investimentos e acompanhar metas financeiras de forma clara e personalizada.
 
 ---
 
-## O Que Você Deve Entregar
+## 📂 Estrutura do Projeto
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+finfree/ ├── data/ │ ├── transacoes.csv # Histórico de transações │ ├── historico_atendimento.csv # Histórico de atendimentos │ ├── perfil_investidor.json # Perfil e preferências do cliente │ ├── produtos_financeiros.json # Catálogo de produtos financeiros │ ├── metas_financeiras.json # Objetivos financeiros │ └── alertas.json # Alertas financeiros ├── src/ │ ├── chat.py # Página de chat com o agente │ ├── dashboard.py # Página de dashboards financeiros │ └── utils.py # Funções auxiliares (carregar dados) ├── app.py # Arquivo principal (multipage Streamlit) ├── prompts.md # Definição de prompts e regras do agente ├── examples.md # Dataset inicial com mocks └── README.md # Documentação do projeto
 
 ---
 
-### 2. Base de Conhecimento
+## ⚙️ Setup do Ambiente
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+### 1. Instalar Python com pyenv
+```bash
+pyenv install 3.11.6
+pyenv local 3.11.6
+2. Criar ambiente com Poetry
+poetry init
+poetry add streamlit langchain pandas plotly ollama
+poetry shell
+________________________________________
+🚀 Executando o Projeto
+1. Rodar o Streamlit
+streamlit run src/finfree/app.py
+2. Navegação
+•	Chat → interação com o agente FinFree.
+•	Dashboards → visualização de transações, metas, alertas e simulações.
+________________________________________
+📊 Funcionalidades
+•	Chat → Respostas personalizadas com base em perfil, histórico e produtos.
+•	Dashboards → 
+o	Distribuição de gastos por categoria.
+o	Regra 50-30-20 aplicada à renda mensal.
+o	Comparativo de risco vs liquidez dos produtos.
+o	Progresso das metas financeiras.
+o	Alertas financeiros proativos.
+o	Simulação de investimentos (Tesouro Selic vs Fundo ESG).
+________________________________________
+🧠 Prompts
+O comportamento do agente é definido em prompts.md, incluindo:
+•	System Prompt com regras claras.
+•	Few-Shot Prompting para consistência nas respostas.
+•	Tratamento de edge cases (informações sensíveis, dados incompletos).
+________________________________________
+📈 Diagrama de Fluxo Expandido
+flowchart TD
+    subgraph Base_de_Conhecimento
+        A1[transacoes.csv\nHistórico de transações]
+        A2[historico_atendimento.csv\nHistórico de atendimentos]
+        A3[perfil_investidor.json\nPerfil e preferências]
+        A4[produtos_financeiros.json\nProdutos e serviços]
+        A5[metas_financeiras.json\nMetas e objetivos]
+        A6[alertas.json\nAlertas financeiros]
+    end
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+    subgraph Agente_FinFree
+        B1[Carregamento de dados]
+        B2[Montagem de contexto]
+        B3[Motor de decisão\n(Orçamento 50-30-20,\nPerfil de risco,\nSimulações,\nMetas,\nAlertas)]
+        B4[Resposta personalizada]
+    end
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+    subgraph Dashboards
+        D1[Distribuição de gastos]
+        D2[Comparativo risco vs liquidez]
+        D3[Progresso das metas]
+        D4[Alertas financeiros]
+        D5[Simulação de investimentos]
+    end
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+    subgraph Usuario
+        U1[Entrada do usuário\n(Pergunta ou solicitação)]
+        U2[Saída do agente\n(Resposta clara e confiável)]
+    end
 
----
+    A1 --> B1
+    A2 --> B1
+    A3 --> B1
+    A4 --> B1
+    A5 --> B1
+    A6 --> B1
 
-### 3. Prompts do Agente
+    B1 --> B2
+    B2 --> B3
+    B3 --> B4
 
-Documente os prompts que definem o comportamento do seu agente:
+    B4 --> U2
+    U1 --> B2
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+    B3 --> D1
+    B3 --> D2
+    B3 --> D3
+    B3 --> D4
+    B3 --> D5
+________________________________________
+🎯 Objetivo
+O FinFree foi projetado para ser:
+•	Confiável → nunca inventar dados.
+•	Consistente → usar histórico e contexto.
+•	Personalizado → adaptar recomendações ao perfil do usuário.
+•	Seguro → tratar edge cases com responsabilidade.
 
 ---
-
-## Dicas Finais
-
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
