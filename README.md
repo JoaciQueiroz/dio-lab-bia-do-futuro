@@ -10,7 +10,7 @@ O **FinFree** é um agente de inteligência artificial projetado para democratiz
   <p><i>Interface do FinFree AI: Registro de transações e histórico de chat com o Agente.</i></p>
 </div>
 
-## 📑 Transparência e Rastreabilidade
+### 📑 Transparência e Rastreabilidade
 
 Conforme demonstrado na interface, o sistema prioriza a clareza das informações:
 * **Log de Transações:** Exibição clara de todas as movimentações financeiras, permitindo que o usuário valide os dados que a IA está analisando.
@@ -56,56 +56,55 @@ agente-finfree/
 │       └── app.py              # UI: Interface Streamlit
 ├── pyproject.toml              # Configuração Poetry
 └── .env                        # Variáveis de ambiente (ignorado pelo git)
-
-
+```
 ## 🔧 Configuração e Instalação
-
 Nesta seção, você encontrará o passo a passo para preparar o ambiente local.
 
-## 1. Requisitos de Ambiente
-
+### 1. Requisitos de Ambiente
 Certifique-se de ter o pyenv e o Poetry instalados em sua máquina.
 
-'''bash
-## Clonar o repositório
+### Clonar o repositório
+```
+bash
 git clone https://github.com/seu-usuario/finfree-ai.git
-cd finfree-ai'''
+cd finfree-ai 
+```
 
-## Configurar a versão correta do Python via pyenv
+### Configurar a versão correta do Python via pyenv
+```
 pyenv install 3.10.12
 pyenv local 3.10.12
+```
 
-## Instalar dependências e criar ambiente virtual via Poetry
+### Instalar dependências e criar ambiente virtual via Poetry
+```
 poetry install
+```
+
 ## 2. Configuração do Modelo IA (Ollama)
 O projeto está otimizado para o modelo Llama 3.2:1b, ideal para execução em hardware doméstico.
-
-Bash
-## Certifique-se que o Ollama está rodando e baixe o modelo
-ollama pull llama3.2:1b
-## 3. Variáveis de Ambiente
-Crie um arquivo .env na raiz do projeto:
-
-Snippet de código
+```
 OLLAMA_URL=http://localhost:11434
 OLLAMA_MODEL=llama3.2:1b
-
+```
+## Certifique-se que o Ollama está rodando e baixe o modelo
+```
+ollama pull llama3.2:1b
+```
 ## 🖥️ Execução
 Para iniciar o agente financeiro, utilize o comando:
-
+```
 Bash
 poetry run streamlit run src/finfree/app.py
-
+```
 ## 🧪 Metodologia de Avaliação
 O projeto foi validado utilizando métricas de:
 
 Assertividade: Cálculo exato de saldo real comparando total_entradas vs total_saidas.
-
 Segurança: O agente é instruído a admitir desconhecimento sobre temas fora do escopo financeiro.
-
 Coerência: Recomendações baseadas estritamente no perfil de risco do utilizador.
 
-📝 Licença
-Distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+## 📝 Licença
+Distribuído sob a licença MIT. 
 
 Desenvolvido como projeto prático para o desafio de Agentes de IA da DIO. 🚀
