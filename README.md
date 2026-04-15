@@ -1,106 +1,109 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
-# 💸 FinFree - Agente Financeiro Digital
+# 💸 FinFree AI - Mentor de Inteligência Financeira
 
-O **FinFree** é um agente financeiro digital desenvolvido em **Python + Streamlit**, que ajuda usuários a organizar orçamento, simular investimentos e acompanhar metas financeiras de forma clara e personalizada.
-
----
-
-## 📂 Estrutura do Projeto
-
-finfree/ ├── data/ │ ├── transacoes.csv # Histórico de transações │ ├── historico_atendimento.csv # Histórico de atendimentos │ ├── perfil_investidor.json # Perfil e preferências do cliente │ ├── produtos_financeiros.json # Catálogo de produtos financeiros │ ├── metas_financeiras.json # Objetivos financeiros │ └── alertas.json # Alertas financeiros ├── src/ │ ├── chat.py # Página de chat com o agente │ ├── dashboard.py # Página de dashboards financeiros │ └── utils.py # Funções auxiliares (carregar dados) ├── app.py # Arquivo principal (multipage Streamlit) ├── prompts.md # Definição de prompts e regras do agente ├── examples.md # Dataset inicial com mocks └── README.md # Documentação do projeto
+O **FinFree** é um agente de inteligência artificial projetado para democratizar a educação financeira. Ele atua como um mentor personalizado que analisa dados reais de transações, histórico de atendimentos e perfil de risco para oferecer diagnósticos financeiros precisos e recomendações de investimento.
 
 ---
 
-## ⚙️ Setup do Ambiente
+<div align="center">
+  <img src="assets/Print_FinFree.jpg" alt="Interface FinFree AI" width="800px">
+  <p><i>Interface do FinFree AI: Registro de transações e histórico de chat com o Agente.</i></p>
+</div>
 
-### 1. Instalar Python com pyenv
-```bash
-pyenv install 3.11.6
-pyenv local 3.11.6
-2. Criar ambiente com Poetry
-poetry init
-poetry add streamlit langchain pandas plotly ollama
-poetry shell
-________________________________________
-🚀 Executando o Projeto
-1. Rodar o Streamlit
-streamlit run src/finfree/app.py
-2. Navegação
-•	Chat → interação com o agente FinFree.
-•	Dashboards → visualização de transações, metas, alertas e simulações.
-________________________________________
-📊 Funcionalidades
-•	Chat → Respostas personalizadas com base em perfil, histórico e produtos.
-•	Dashboards → 
-o	Distribuição de gastos por categoria.
-o	Regra 50-30-20 aplicada à renda mensal.
-o	Comparativo de risco vs liquidez dos produtos.
-o	Progresso das metas financeiras.
-o	Alertas financeiros proativos.
-o	Simulação de investimentos (Tesouro Selic vs Fundo ESG).
-________________________________________
-🧠 Prompts
-O comportamento do agente é definido em prompts.md, incluindo:
-•	System Prompt com regras claras.
-•	Few-Shot Prompting para consistência nas respostas.
-•	Tratamento de edge cases (informações sensíveis, dados incompletos).
-________________________________________
-📈 Diagrama de Fluxo Expandido
-flowchart TD
-    subgraph Base_de_Conhecimento
-        A1[transacoes.csv\nHistórico de transações]
-        A2[historico_atendimento.csv\nHistórico de atendimentos]
-        A3[perfil_investidor.json\nPerfil e preferências]
-        A4[produtos_financeiros.json\nProdutos e serviços]
-        A5[metas_financeiras.json\nMetas e objetivos]
-        A6[alertas.json\nAlertas financeiros]
-    end
+### 📑 Transparência e Rastreabilidade
 
-    subgraph Agente_FinFree
-        B1[Carregamento de dados]
-        B2[Montagem de contexto]
-        B3[Motor de decisão\n(Orçamento 50-30-20,\nPerfil de risco,\nSimulações,\nMetas,\nAlertas)]
-        B4[Resposta personalizada]
-    end
-
-    subgraph Dashboards
-        D1[Distribuição de gastos]
-        D2[Comparativo risco vs liquidez]
-        D3[Progresso das metas]
-        D4[Alertas financeiros]
-        D5[Simulação de investimentos]
-    end
-
-    subgraph Usuario
-        U1[Entrada do usuário\n(Pergunta ou solicitação)]
-        U2[Saída do agente\n(Resposta clara e confiável)]
-    end
-
-    A1 --> B1
-    A2 --> B1
-    A3 --> B1
-    A4 --> B1
-    A5 --> B1
-    A6 --> B1
-
-    B1 --> B2
-    B2 --> B3
-    B3 --> B4
-
-    B4 --> U2
-    U1 --> B2
-
-    B3 --> D1
-    B3 --> D2
-    B3 --> D3
-    B3 --> D4
-    B3 --> D5
-________________________________________
-🎯 Objetivo
-O FinFree foi projetado para ser:
-•	Confiável → nunca inventar dados.
-•	Consistente → usar histórico e contexto.
-•	Personalizado → adaptar recomendações ao perfil do usuário.
-•	Seguro → tratar edge cases com responsabilidade.
+Conforme demonstrado na interface, o sistema prioriza a clareza das informações:
+* **Log de Transações:** Exibição clara de todas as movimentações financeiras, permitindo que o usuário valide os dados que a IA está analisando.
+* **Interação Direta:** Sistema de chat que mantém o histórico da conversa visível, facilitando o acompanhamento das orientações financeiras.
+* **Identificação de Fluxo:** Colunas específicas para Categoria e Tipo (Entrada/Saída), fundamentais para a auditoria do saldo calculado pelo agente.
 
 ---
+
+## 🚀 Funcionalidades Técnicas
+
+* **Memória de Curto e Longo Prazo:** Utiliza um histórico de atendimentos (`.csv`) para manter o fio da meada em conversas contínuas.
+* **Contexto Enriquecido:** Algoritmo que totaliza receitas e despesas antes de enviar ao modelo, evitando a "cegueira" de dados por limitação de tokens.
+* **Sanitização com Pandas:** Tratamento rigoroso de tipagem de dados (Type Casting) para garantir precisão em cálculos de saldo.
+* **Perfil de Investidor Adaptativo:** Cruza as metas financeiras e o apetite a risco (JSON) com o catálogo de produtos disponíveis.
+* **Processamento Local:** Focado em privacidade e baixo custo, utilizando modelos via Ollama.
+
+---
+
+## 🛠️ Tecnologias e Ferramentas
+
+* **Linguagem:** [Python 3.10.12](https://www.python.org/)
+* **Gestão de Python:** [pyenv](https://github.com/pyenv/pyenv)
+* **Gestão de Dependências:** [Poetry](https://python-poetry.org/)
+* **IA Engine:** [Ollama](https://ollama.ai/) (Modelo: `llama3.2:1b`)
+* **Interface:** [Streamlit](https://streamlit.io/)
+* **Análise de Dados:** [Pandas](https://pandas.pydata.org/)
+
+---
+
+## 📂 Estrutura de Diretórios
+
+```text
+agente-finfree/
+├── assets/                     # Imagens de documentação
+├── data/                       # Base de conhecimento local (CSV/JSON)
+│   ├── transacoes.csv          # Registro de entradas e saídas
+│   ├── perfil_investidor.json  # Dados do cliente
+│   ├── produtos_financeiros.json # Catálogo de produtos
+│   └── historico_atendimento.csv # Logs de memória do agente
+├── src/
+│   └── finfree/
+│       ├── agente.py           # Core: Lógica, Prompt e Memória
+│       └── app.py              # UI: Interface Streamlit
+├── pyproject.toml              # Configuração Poetry
+└── .env                        # Variáveis de ambiente (ignorado pelo git)
+
+
+## 🔧 Configuração e Instalação
+
+Nesta seção, você encontrará o passo a passo para preparar o ambiente local.
+
+### 1. Requisitos de Ambiente
+
+Certifique-se de ter o pyenv e o Poetry instalados em sua máquina.
+
+'''bash
+# Clonar o repositório
+git clone https://github.com/seu-usuario/finfree-ai.git
+cd finfree-ai'''
+
+# Configurar a versão correta do Python via pyenv
+pyenv install 3.10.12
+pyenv local 3.10.12
+
+# Instalar dependências e criar ambiente virtual via Poetry
+poetry install
+2. Configuração do Modelo IA (Ollama)
+O projeto está otimizado para o modelo Llama 3.2:1b, ideal para execução em hardware doméstico.
+
+Bash
+# Certifique-se que o Ollama está rodando e baixe o modelo
+ollama pull llama3.2:1b
+3. Variáveis de Ambiente
+Crie um arquivo .env na raiz do projeto:
+
+Snippet de código
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2:1b
+🖥️ Execução
+Para iniciar o agente financeiro, utilize o comando:
+
+Bash
+poetry run streamlit run src/finfree/app.py
+🧪 Metodologia de Avaliação
+O projeto foi validado utilizando métricas de:
+
+Assertividade: Cálculo exato de saldo real comparando total_entradas vs total_saidas.
+
+Segurança: O agente é instruído a admitir desconhecimento sobre temas fora do escopo financeiro.
+
+Coerência: Recomendações baseadas estritamente no perfil de risco do utilizador.
+
+📝 Licença
+Distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+Desenvolvido como projeto prático para o desafio de Agentes de IA da DIO. 🚀
