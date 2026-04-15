@@ -1,0 +1,28 @@
+# Variáveis de ambiente (Segurança!)
+.env
+
+# Poetry e Ambientes Virtuais
+.venv/
+virtualenv/
+bin/
+lib/
+include/
+
+# Python cache e temporários
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# VS Code / IDEs
+.vscode/
+.idea/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Dados locais (Opcional)
+# Se você não quiser subir seus CSVs de teste reais, desmarque abaixo:
+# data/historico_atendimento.csv
